@@ -19,4 +19,11 @@ public class PlayerController : MonoBehaviour {
         animator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
     }
+
+    private void Update() {
+        if (isDead)
+        {
+            // 사망시 처리를 더 이상 진행하지 않고 종료
+            return;
+        }
 }

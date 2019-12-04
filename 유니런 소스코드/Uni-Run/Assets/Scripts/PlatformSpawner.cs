@@ -40,7 +40,12 @@ public class PlatformSpawner : MonoBehaviour {
     }
 
     void Update() {
-        
+        // 게임 오버 상태에서는 동작하지 않는다.
+        if (GameManager.instance.isGameover)
+        {
+            return;
+        }
+
         // 마지막 배치 시점에서 timeBetSpawn 이상 시간이 흘렀다면
         if (Time.time >= lastSpawnTime + timeBetSpawn)
         {
